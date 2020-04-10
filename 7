@@ -1,0 +1,34 @@
+#include<stdio.h>
+int main()
+{
+	int i, arr[20],n,rtime[20];
+	printf("No. of process: ");
+	scanf("%d",&n);
+	printf("Enter the data\n");
+	for(i=0;i<n;i++)
+	{
+		printf("Resp. time of P%d (in msec): ",i);
+		scanf("%d",&rtime[i]);
+		if(rtime[i]<1000)
+		{
+			arr[i]=1;
+		}
+		else
+		{
+			arr[i]=0;
+		}
+	}
+	printf("Process Number\tResp. Time\tarr\t\tPriority");
+	for(i=0;i<n;i++)
+	{
+		printf("\nP%d\t\t%dms\t\t",i,rtime[i]);
+		if(arr[i]==1)
+		{
+			printf("Interactive\tHigh");
+		}
+		else
+		{
+			printf("Non-Interactive\tLow");
+		}
+	}
+}
